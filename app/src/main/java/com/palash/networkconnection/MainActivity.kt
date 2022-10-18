@@ -1,5 +1,6 @@
 package com.palash.networkconnection
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         button!!.setOnClickListener {
             Toast.makeText(this, "Internet Available ${NetworkUtils.isInternetAvailable(this)}", Toast.LENGTH_SHORT).show()
             Log.d("MyTag", "${NetworkUtils.isInternetAvailable(this)}")
+
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
         }
     }
 }
